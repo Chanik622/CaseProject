@@ -1,0 +1,25 @@
+<div>
+  <h1 class="title">חיפוש תיקים</h1>
+
+  <div class="search-container">
+    <div class="filters">
+      <p-selectButton [options]="filterOptionsList" optionLabel="name" optionValue="value" [(ngModel)]="searchCriteria.filterOptions">
+      </p-selectButton>
+    </div>
+
+    <div class="actions">
+      <p-button 
+      icon="pi pi-search" 
+      label="חיפוש" 
+      class="small-button" 
+      (click)="onSearchFilter()">
+    </p-button>
+          <p-dropdown [options]="sortOptions" optionLabel="label" [(ngModel)]="selectedSort" placeholder="מיין לפי:" (onChange)="onSortCases()" class="sort-dropdown">
+      </p-dropdown>
+    </div>
+  </div>
+
+  <div class="case-details">
+    <app-case-details [cases]="cases"></app-case-details>
+  </div>
+</div>

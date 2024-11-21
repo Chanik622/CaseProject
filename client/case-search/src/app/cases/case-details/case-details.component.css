@@ -1,0 +1,38 @@
+/* .case-panel {
+    margin-bottom: 20px; 
+    border: 1px solid #d3d3d3; 
+    border-radius: 5px; 
+    padding: 10px; 
+  } */
+
+  .case-panel {
+    margin: 15px 0;
+    direction: rtl;
+  
+    p-panel {
+      width: 100%;
+      padding: 10px;
+  
+      p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #333;
+      }
+    }
+  }
+  
+  .case-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+  
+    p-selectButton,
+    p-dropdown {
+      margin-right: 10px;
+    }
+  
+    button {
+      margin-top: 5px;
+    }
+  }
