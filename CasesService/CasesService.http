@@ -1,0 +1,6 @@
+@CasesService_HostAddress = {{CasesService_HostAddress}}
+
+GET {{CasesService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
