@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
 import { CaseStatusPipe } from '../case-status.pipe';
 import { ButtonModule } from 'primeng/button';
-
 @Component({
   selector: 'app-cases',
   standalone: true,
@@ -25,7 +24,8 @@ export class CasesComponent implements OnInit {
     private caseService: CaseService
   ) {}
   
-  
+  filterOption: number = 1
+
   cases: CaseDetail[] = []
   selectedSort: any = null;
 
@@ -33,7 +33,7 @@ export class CasesComponent implements OnInit {
     openingDateFrom: '',
     openingDateTo: '',
     name: '',
-    filterOptions: [1] 
+    filterOptions: [] 
   };
 
   filterOptionsList = [
@@ -59,6 +59,7 @@ export class CasesComponent implements OnInit {
   onSearchFilter()
   {
     debugger;
+    this.searchCriteria.filterOptions = [this.filterOption];
     this.caseService.getCaseDetails(this.searchCriteria).subscribe(data => {
       this.cases = data; 
     });
@@ -66,7 +67,6 @@ export class CasesComponent implements OnInit {
 
   onSortCases()
   {
-    debugger;
     if (this.selectedSort) {
       switch (this.selectedSort?.value) {
         case 'date-desc':
